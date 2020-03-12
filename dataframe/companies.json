@@ -1,0 +1,18 @@
+{
+  "Apple": { "ticker": "AAPL", "market": "NASDAQ" },
+  "AMD": { "ticker": "AMD", "market": "NASDAQ" },
+  "Amazon": { "ticker": "AMZN", "market": "NASDAQ" },
+  "Boeing": { "ticker": "BA", "market": "NYSE" },
+  "Caterpillar": { "ticker": "CAT", "market": "NYSE" },
+  "Facebook": { "ticker": "FB", "market": "NASDAQ" },
+  "Google": { "ticker": "GOOG", "market": "NASDAQ" },
+  "Alphabet": { "ticker": "GOOG", "market": "NASDAQ" },
+  "Intel": { "ticker": "INTC", "market": "NASDAQ" },
+  "3M": { "ticker": "MMM", "market": "NYSE" },
+  "Microsoft": { "ticker": "MSFT", "market": "NASDAQ" },
+  "Netflix": { "ticker": "NFLX", "market": "NASDAQ" },
+  "Nvidia": { "ticker": "NVDA", "market": "NASDAQ" },
+  "Qualcomm": { "ticker": "QCOM", "market": "NASDAQ" },
+  "Starbucks": { "ticker": "SBUX", "market": "NASDAQ" },
+  "Tesla": { "ticker": "TSLA", "market": "NASDAQ" }
+}

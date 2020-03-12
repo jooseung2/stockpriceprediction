@@ -1,0 +1,4 @@
+*.jar
+*.csv
+*.bin
+**/.DS_Store
