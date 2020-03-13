@@ -2,3 +2,5 @@
 *.csv
 *.bin
 .DS_Store
+*.tar
+*.image
