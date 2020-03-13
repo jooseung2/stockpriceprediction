@@ -18,6 +18,7 @@ CNN, SVM and logistic regression.
 
 ## Deliverables
 
+- [Link to web interface](http://stockpriceprediction.us-east-2.elasticbeanstalk.com/)
 - [News articles data (2018-2019)](https://github.com/jooseung2/stockpriceprediction/tree/master/data)
 - [Google's Pretrained Word2Vec Model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
 - [Code running on Northwestern machine](https://github.com/jooseung2/stockpriceprediction/blob/master/commoncrawl/src/main/java/jooseung/lee/App.java)
