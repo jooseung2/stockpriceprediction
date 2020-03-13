@@ -14,6 +14,8 @@ Output: Classification result, one of "buy", "sell", or "hold".
 
 ## Core Model
 
+CNN, SVM and logistic regression.
+
 ## Deliverables
 
 - [News articles data (2018-2019)](https://github.com/jooseung2/stockpriceprediction/tree/master/data)
@@ -96,17 +98,12 @@ python cnn.py
 
 We followed the guide on [here](https://linuxacademy.com/blog/linux-academy/deploying-a-containerized-flask-application-with-aws-ecs-and-docker/) to deploy our model to AWS ECR.
 
-1. create new directory that contains just the pickled model files and the flask app
-
-```
-
-```
+1. create new directory (webapp/models) that contains just the pickled model files and the flask app
 
 2. Run docker / aws commands to create image and push to ECR
 
 ```
 docker build -t webapp .
-docker run -d -p 5000:5000 <image id>
 
 aws ecr create-repository --repository-name stockprice --region us-east-2
 docker tag 275d923a596f 179460613492.dkr.ecr.us-east-2.amazonaws.com/stockprice
@@ -115,5 +112,14 @@ docker push 179460613492.dkr.ecr.us-east-2.amazonaws.com/stockprice
 ```
 
 3. Deploy on ECS
+
+4. Running Locally
+
+```
+docker pull jlee6741/stockprice:firsttry
+docker run -d -p 5000:5000 jlee6741/stockprice:firsttry
+```
+
+Go to 0.0.0.0:5000 to try.
 
 ## References
