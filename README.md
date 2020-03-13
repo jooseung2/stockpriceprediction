@@ -14,7 +14,7 @@ Output: Classification result, one of "buy", "sell", or "hold".
 
 ## Core Model
 
-CNN, SVM and logistic regression.
+We built a variety of different models ranging from classical machine learning models such as support vector machine, logistic regression to some deep learning methods mentioned in literature such as convolutional neural network(CNN) and convolutional neural network + long short term memory model (C-LSTM) for text classification purposes.
 
 ## Deliverables
 
@@ -123,4 +123,14 @@ docker run -d -p 5000:5000 jlee6741/stockprice:firsttry
 
 Go to 0.0.0.0:5000 to try.
 
+```
+docker ps -a      # find pid of docker image being run
+docker kill <pid> # kill process when you are done
+```
+
 ## References
+
+[Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1408.5882.pdf)
+[Deep Learning for Event-Driven Stock Prediction](https://www.aaai.org/ocs/index.php/IJCAI/IJCAI15/paper/viewFile/11031/10986)
+[On the Importance of Text Analysis for Stock Price Prediction](https://nlp.stanford.edu/pubs/lrec2014-stock.pdf)
+[Using NLP on news headlines to predict index trends](https://arxiv.org/pdf/1806.09533.pdf)
