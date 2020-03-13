@@ -18,8 +18,8 @@ Output: Classification result, one of "buy", "sell", or "hold".
 
 - [News articles data (2018-2019)](https://github.com/jooseung2/stockpriceprediction/tree/master/data)
 - [Google's Pretrained Word2Vec Model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
-- [Code running on Northwestern machine](linktowherejavacodeis)
-- [Code running on AWS Elastic Beanstalk](linktoFlaskApp)
+- [Code running on Northwestern machine](https://github.com/jooseung2/stockpriceprediction/blob/master/commoncrawl/src/main/java/jooseung/lee/App.java)
+- [Code running on AWS Elastic Beanstalk](https://github.com/jooseung2/stockpriceprediction/tree/master/webapp)
 - [Dockerfile](https://github.com/jooseung2/stockpriceprediction/tree/master/webapp/Dockerfile)
 - [Docker Image on Docker Hub](https://hub.docker.com/repository/docker/jlee6741/stockprice)
 - [Docker Image (in .tar) on Google Drive](https://drive.google.com/file/d/1N2mE7gJfQkTpufFArW639hxWxR97h4uI/view?usp=sharing)
