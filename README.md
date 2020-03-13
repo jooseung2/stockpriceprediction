@@ -131,6 +131,9 @@ docker kill <pid> # kill process when you are done
 ## References
 
 [Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1408.5882.pdf)
+
 [Deep Learning for Event-Driven Stock Prediction](https://www.aaai.org/ocs/index.php/IJCAI/IJCAI15/paper/viewFile/11031/10986)
+
 [On the Importance of Text Analysis for Stock Price Prediction](https://nlp.stanford.edu/pubs/lrec2014-stock.pdf)
+
 [Using NLP on news headlines to predict index trends](https://arxiv.org/pdf/1806.09533.pdf)
