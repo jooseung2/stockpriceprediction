@@ -1,5 +1,7 @@
 # Stock Price Prediction using Sentence Classification
 
+by Joo Seung Lee, Wungjae Lee, Thomas Chen
+
 ## Problem Statement
 
 Supply and demand in the market determine stock price. Many high frequency trading firm and investment firm deploys sentiment analysis algorithms for news to aid their trading. Company event news and earnings news affect investors' valuation of a company, but other factors contribute to supply and demand, such as their sentiments, attitudes, and expectations.
@@ -124,8 +126,8 @@ docker push 179460613492.dkr.ecr.us-east-2.amazonaws.com/stockprice
 - Running Locally
 
 ```
-docker pull jlee6741/stockprice:firsttry
-docker run -d -p 5000:5000 jlee6741/stockprice:firsttry
+docker pull jlee6741/stockprice:secondtry
+docker run -d -p 5000:5000 jlee6741/stockprice:secondtry
 ```
 
 Go to 0.0.0.0:5000 to try.
