@@ -14,7 +14,9 @@ Output: Classification result, one of "buy", "sell", or "hold".
 
 ## Core Model
 
-We built a variety of different models ranging from classical machine learning models such as support vector machine, logistic regression to some deep learning methods mentioned in literature such as convolutional neural network(CNN) and convolutional neural network + long short term memory model (C-LSTM) for text classification purposes.
+We built a variety of different models ranging from classical machine learning models such as support vector machine(SVM), logistic regression to some deep learning methods mentioned in literature such as convolutional neural network(CNN) and convolutional neural network + long short term memory model (C-LSTM) for text classification purposes.
+As to examine the results of our models, for the three class classification case, we examine
+confusion matrix and backtest of our strategy based on the models’ outputs. For confusion matrix, we mainly look at the precision for predicting +1 and -1, and we only care the samples that are either actual +1 or -1 because with actual label of 0, means that the return will be between -0.25% to +0.25% and with larger number their mean converge to 0% return which is trivial. As for backtest, we naively simulate a strategy that buys when prediction is +1, do nothing when prediction is 0, and sell when prediction is -1, with a holding time equal to our prediction time lag (15min, 60min, 1day etc..) and we attach a backtest result here.
 
 ## Deliverables
 
