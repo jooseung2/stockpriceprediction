@@ -3,8 +3,11 @@ import datetime
 import sys
 from multiprocessing import cpu_count, Pool
 
+df2018 = pd.read_hdf("result2018.h5", key="df")
+df2019 = pd.read_hdf("result2019.h5", key="df")
 
-ARTICLES_DF = pd.read_hdf("result{}.h5".format(sys.argv[1]), key="df")
+
+ARTICLES_DF = pd.concat([df2018, df2019]).drop_duplicates().reset_index(drop=True)
 
 ### UTC to CST. UTC is ahead of 6 hours, which is 3600*6 seconds ###
 ARTICLES_DF["article_datetime_CST"] = ARTICLES_DF.apply(
@@ -12,6 +15,7 @@ ARTICLES_DF["article_datetime_CST"] = ARTICLES_DF.apply(
 )
 COMPANIES_LIST = ARTICLES_DF.company_code.unique()
 CPU_NUM = range(cpu_count())
+
 
 def my_func(company):
     def getPriceDiffPercentage(stockdf1, ticker, time, interval):
@@ -33,13 +37,16 @@ def my_func(company):
 
     TIME_INTERVAL = [180, 300, 900, 3600, 21600, 86400]
 
-    stockdf = pd.read_csv("../../StockData/{}.csv".format(company), header=0)
+    stockdf = pd.read_csv("../data/stock/{}.csv".format(company), header=0)
     stockdf["datetime"] = stockdf.apply(
         lambda x: datetime.datetime.strptime(x["Date"], "%Y-%m-%d %H:%M:%S"), axis=1
     )
     company_df = ARTICLES_DF[
         (ARTICLES_DF.company_code == company)
-        & (ARTICLES_DF.article_datetime_CST > datetime.datetime(int(sys.argv[1]), 1, 18, 0, 0, 0))
+        # & (
+        #     ARTICLES_DF.article_datetime_CST
+        #     > datetime.datetime(int(sys.argv[1]), 1, 18, 0, 0, 0)
+        # )
     ]
     for interval in TIME_INTERVAL:
         company_df["priceAfter{}".format(interval)] = company_df.apply(
@@ -50,6 +57,7 @@ def my_func(company):
         )
     print(company_df.sort_values("priceAfter86400", ascending=True))
     return company_df
+
 
 if __name__ == "__main__":
     # haha = pd.read_hdf("priceDf.h5", key="priceDf")

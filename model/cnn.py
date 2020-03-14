@@ -1,3 +1,8 @@
+import logging
+
+logging.basicConfig(
+    format="%(asctime)s : %(levelname)s : %(message)s", level=logging.DEBUG
+)
 import tensorflow
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Embedding, Flatten, Dropout
@@ -23,7 +28,7 @@ SEQUENCE_LENGTH_PERCENTILE = 90
 n_layers = 2
 hidden_units = 500
 batch_size = 100
-pretrained_embedding = False # change to use word2vec 
+pretrained_embedding = True  # change to use word2vec
 TRAINABLE_EMBEDDINGS = True
 patience = 2
 dropout_rate = 0.3
@@ -149,7 +154,7 @@ def train(
     print(fit.history)
 
     if model_file:
-        model.save(model_file)
+        keras.models.save_model(model, model_file, overwrite=True)
     return model
 
 
@@ -189,6 +194,10 @@ if __name__ == "__main__":
     mydict = gensim.corpora.Dictionary(texts)
     mydict.save("article_title.dict")
     train(
-        texts, labels, mydict, model_file="stockprice_cnn.model"
-    )  # ,EMBEDDINGS_MODEL_FILE='../data/GoogleNews-vectors-negative300.bin'))
+        texts,
+        labels,
+        mydict,
+        model_file="stockprice_cnn.model",
+        EMBEDDINGS_MODEL_FILE="../data/GoogleNews-vectors-negative300.bin",
+    )
 

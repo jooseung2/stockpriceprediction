@@ -1,11 +1,9 @@
-wimport json
+import json
 from datetime import datetime
 import pandas as pd
 import numpy as np
 import sys
 
-
-YEAR = sys.argv[1]
 with open("companies.json") as file2:
     COMPANIES = json.load(file2)
 
@@ -20,11 +18,10 @@ def findCompany(title):
     return found
 
 
-def rightTime(articleTime):
-    minTime = datetime(YEAR, 1, 1, 0, 0, 0)
-    maxTime = datetime(YEAR, 12, 31, 23, 59, 59)
+def rightTime(year, articleTime):
+    minTime = datetime(year, 1, 1, 0, 0, 0)
+    maxTime = datetime(year, 12, 31, 23, 59, 59)
     return minTime < articleTime < maxTime
-
 
 def findSource(articleUrl):
     temp = articleUrl.split(".com")[0]
@@ -34,7 +31,7 @@ def findSource(articleUrl):
         return temp.split("/")[-1]
 
 
-def makeRowsFromArticle(articleJson, titles, duplicates):
+def makeRowsFromArticle(articleJson, year, titles, duplicates):
     articleTitle = articleJson["title"]
     if articleTitle in titles:
         duplicates[0] += 1
@@ -44,7 +41,7 @@ def makeRowsFromArticle(articleJson, titles, duplicates):
     articleDatetime = datetime.strptime(
         articleJson["datePublished"], "%Y-%m-%dT%H:%M:%S"
     )
-    if not rightTime(articleDatetime):
+    if not rightTime(year, articleDatetime):
         return []
     articleUrl = articleJson["url"]
     articleSource = findSource(articleUrl)
@@ -70,16 +67,17 @@ def main():
     results = np.zeros((1, 8))
     duplicates = [0]
 
+    for year in ['2018', '2019']
     for i in range(1, 13):
         try:
-            with open("result{}{}.json".format(YEAR,i if i > 9 else "0" + str(i))) as file1:
+            with open("data/{}/result{}{}.json".format(year, year, i if i > 9 else "0" + str(i))) as file1:
                 data = json.load(file1)
-            print("For the month of 03, {} articles found. ".format(len(data)), end="")
+            print("For the month of {}, {} articles found. ".format(i, len(data)))
         except FileNotFoundError:
             continue
 
-        for i in data:
-            rows = makeRowsFromArticle(i, titles, duplicates)
+        for j in data:
+            rows = makeRowsFromArticle(j, year, titles, duplicates)
             for row in rows:
                 results = np.append(results, [np.array(row)], axis=0)
 

@@ -20,8 +20,9 @@ confusion matrix and backtest of our strategy based on the models’ outputs. Fo
 
 ## Deliverables
 
-- [Link to web interface](http://stockpriceprediction.us-east-2.elasticbeanstalk.com/)
-- [News articles data (2018-2019)](https://github.com/jooseung2/stockpriceprediction/tree/master/data)
+- [Link to web interface](http://stockprice.us-east-2.elasticbeanstalk.com/)
+- [News articles data (2018-2019)](https://drive.google.com/drive/folders/1Ld2C_N9ZJjwqVfdf9I8KjNENT52m7ff_?usp=sharing)
+- [Stock price data (2018-2019)](https://drive.google.com/drive/folders/1Qv4c7VqtB9EDhakoLCJOCuFSj_Mzf2C4?usp=sharing)
 - [Google's Pretrained Word2Vec Model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
 - [Code running on Northwestern machine](https://github.com/jooseung2/stockpriceprediction/blob/master/commoncrawl/src/main/java/jooseung/lee/App.java)
 - [Code running on AWS Elastic Beanstalk](https://github.com/jooseung2/stockpriceprediction/tree/master/webapp)
@@ -59,8 +60,10 @@ java -jar news-import-1.0-SNAPSHOT-jar-with-dependencies.jar <year> <month>
 ```
 
 Such as: java -jar news-import-1.0-SNAPSHOT-jar-with-dependencies.jar 2019 12
+These data are accessible in [here](https://drive.google.com/drive/folders/1Ld2C_N9ZJjwqVfdf9I8KjNENT52m7ff_?usp=sharing).
 
 2. Put news article data into dataframe and merge stock price data
+   Stock price data are accessible in [here](https://drive.google.com/drive/folders/1Qv4c7VqtB9EDhakoLCJOCuFSj_Mzf2C4?usp=sharing)
 
 ```
 cd ..
@@ -68,6 +71,8 @@ python buildDataframe.py <year>
 python mergeStockPrice.py <year>
 python labelStockPrice.py
 ```
+
+3. Label as described in the core model section.
 
 ### Preprocessing and Model Training
 
@@ -116,7 +121,7 @@ docker push 179460613492.dkr.ecr.us-east-2.amazonaws.com/stockprice
 
 3. Deploy on ECS
 
-4. Running Locally
+- Running Locally
 
 ```
 docker pull jlee6741/stockprice:firsttry
