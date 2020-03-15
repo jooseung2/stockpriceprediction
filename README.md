@@ -61,7 +61,12 @@ export aws_secret_access_key=<your aws secret access key>
 java -jar news-import-1.0-SNAPSHOT-jar-with-dependencies.jar <year> <month>
 ```
 
-Such as: java -jar news-import-1.0-SNAPSHOT-jar-with-dependencies.jar 2019 12
+Such as:
+
+```
+java -jar news-import-1.0-SNAPSHOT-jar-with-dependencies.jar 2019 12
+```
+
 These data are accessible in [here](https://drive.google.com/drive/folders/1Ld2C_N9ZJjwqVfdf9I8KjNENT52m7ff_?usp=sharing).
 
 2. Put news article data into dataframe and merge stock price data
