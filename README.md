@@ -116,9 +116,9 @@ We followed the guide on [here](https://linuxacademy.com/blog/linux-academy/depl
 docker build -t webapp .
 
 aws ecr create-repository --repository-name stockprice --region us-east-2
-docker tag 275d923a596f 179460613492.dkr.ecr.us-east-2.amazonaws.com/stockprice
-aws ecr get-login-password | docker login --username AWS --password-stdin 179460613492.dkr.ecr.us-east-2.amazonaws.com
-docker push 179460613492.dkr.ecr.us-east-2.amazonaws.com/stockprice
+docker tag <imageid> <ecrid>.dkr.ecr.<region>.amazonaws.com/stockprice
+aws ecr get-login-password | docker login --username AWS --password-stdin <ecrid>.dkr.ecr.<region>.amazonaws.com
+docker push <ecrid>.dkr.ecr.<region>.amazonaws.com/stockprice
 ```
 
 3. Deploy on ECS
