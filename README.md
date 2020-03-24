@@ -22,7 +22,7 @@ confusion matrix and backtest of our strategy based on the models’ outputs. Fo
 
 ## Deliverables
 
-- [Link to web interface](http://stockprice.us-east-2.elasticbeanstalk.com/)
+- [Link to web interface](http://stockpriceprediction-env.eba-phgbbfgs.us-west-2.elasticbeanstalk.com/)
 - [News articles data (2018-2019)](https://drive.google.com/drive/folders/1Ld2C_N9ZJjwqVfdf9I8KjNENT52m7ff_?usp=sharing)
 - [Stock price data (2018-2019)](https://drive.google.com/drive/folders/1Qv4c7VqtB9EDhakoLCJOCuFSj_Mzf2C4?usp=sharing)
 - [Google's Pretrained Word2Vec Model](https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit)
